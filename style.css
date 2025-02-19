@@ -122,13 +122,12 @@ video {
 }
 
 .services {
-    height: 100vh;
+    height: 80vh;
     width: 50vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-
     position: relative;
 }
 
@@ -145,39 +144,58 @@ video {
     margin-bottom: 10px;
 }
 
-#service-1 {
+
+.services-elements {
+    position: relative;
+    width: 600px; /* Tamanho da área visível */
+    height: 300px;
+    overflow: hidden; /* Garante que a transição ocorra dentro da área */
+  }
+  
+  .services-elements .services-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease, background-position 1s ease-in-out;
+  }
+  
+  .services-elements .services-element.active {
+    opacity: 1;
+  }
+
+  .services-element{
+    height: 100%;
+    width: 100%;
+    color: white;
+  }
+  
+  /* Define os backgrounds das divs */
+  #service-1 {
     background: url(avatar.jpg);
-}
-
-#service-2 {
+    background-position: left center;
+  }
+  
+  #service-2 {
+    background: url(img2.jpg);
+    background-position: right center;
+  }
+  
+  #service-3 {
     background: url(avatar.jpg);
-}
-
-#service-3 {
+    background-position: top center;
+  }
+  
+  #service-4 {
     background: url(avatar.jpg);
-}
-
-#service-4 {
-    background: url(avatar.jpg);
-}
-
-
-
-.services-elements .services-element {
-    display: none;
-    width: 500px;
-    height: 600px;
-    /* Oculta todos as divs inicialmente */
-}
-
-.services-elements .services-element.active {
-    display: block;
-    /* Exibe a div ativa */
-}
+    background-position: bottom center;
+  }
 
 
 .faq {
-    height: 50vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;

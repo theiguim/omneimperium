@@ -92,4 +92,42 @@ document.querySelectorAll('.service-link').forEach((link, index) => {
   
   // Para exibir o primeiro item por padrão ao carregar
   document.getElementById('service-1').classList.add('active');
+
+
+
+  const serviceLinks = document.querySelectorAll(".service-link");
+const serviceElements = document.querySelectorAll(".services-element");
+
+let lastIndex = 0; // Para detectar se estamos voltando à div anterior
+
+serviceLinks.forEach((link, index) => {
+  link.addEventListener("click", () => {
+    if (index === lastIndex) return; // Se clicar no mesmo, não faz nada
+
+    // Remove a classe 'active' da anterior
+    serviceElements.forEach((element) => {
+      element.classList.remove("active");
+    });
+
+    const currentService = serviceElements[index];
+
+    // Alterar a posição do background dinamicamente para criar o efeito de deslocamento
+    if (index > lastIndex) {
+      currentService.style.backgroundPosition = "center right"; // Indo para frente
+    } else {
+      currentService.style.backgroundPosition = "center left"; // Indo para trás
+    }
+
+    // Adiciona um pequeno delay para garantir a transição
+    setTimeout(() => {
+      currentService.style.backgroundPosition = "center center"; // Retorna ao centro suavemente
+      currentService.classList.add("active");
+    }, 50);
+
+    lastIndex = index; // Atualiza a última posição clicada
+  });
+});
+
+// Exibir a primeira div por padrão
+serviceElements[0].classList.add("active");
   
