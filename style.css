@@ -54,6 +54,22 @@ video {
     justify-content: center;
 }
 
+.over-background>h1{
+font-size: 100px;
+letter-spacing: 10px;
+}
+.main-arrow-down{
+    position: absolute;
+    bottom: 20vh;    
+}
+
+.sub-title{
+    width: 300px;
+    position: absolute;
+    left: 15vw;
+    bottom: 20vh;
+}
+
 .about {
     position: relative;
     display: flex;
