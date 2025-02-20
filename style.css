@@ -131,15 +131,34 @@ video {
     position: relative;
 }
 
-.services-lnk>h1 {
+.services-link{
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.service-link {
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, font-weight 0.3s ease, font-size 0.5s;
+    
+    
+}
+
+.service-link.active {
+    color: orange; /* Escolha a cor que deseja para destacar */
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.services-link>h1 {
+
     position: absolute;
-    top: 0;
-    margin-top: 100px;
-    font-size: 2em;
+    top: -15vh;
+    font-size: 3em;
 
 }
 
-.services-lnk h2 {
+.services-link h2 {
     cursor: pointer;
     margin-bottom: 10px;
 }
@@ -147,12 +166,17 @@ video {
 
 .services-elements {
     position: relative;
-    width: 600px; /* Tamanho da área visível */
-    height: 300px;
-    overflow: hidden; /* Garante que a transição ocorra dentro da área */
-  }
-  
-  .services-elements .services-element {
+    width: 600px;
+    /* Tamanho da área visível */
+    height: 400px;
+    overflow: hidden;
+    /* Garante que a transição ocorra dentro da área */
+
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.services-elements .services-element {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -160,75 +184,95 @@ video {
     background-position: center;
     opacity: 0;
     transition: opacity 0.8s ease, background-position 1s ease-in-out;
-  }
-  
-  .services-elements .services-element.active {
-    opacity: 1;
-  }
 
-  .services-element{
+    display: flex;
+    justify-content: end;
+}
+
+.services-elements .services-element.active {
+    opacity: 1;
+}
+
+.services-element {
     height: 100%;
     width: 100%;
     color: white;
-  }
-  
-  /* Define os backgrounds das divs */
-  #service-1 {
-    background: url(avatar.jpg);
-    background-position: left center;
-  }
-  
-  #service-2 {
-    background: url(img2.jpg);
-    background-position: right center;
-  }
-  
-  #service-3 {
-    background: url(avatar.jpg);
-    background-position: top center;
-  }
-  
-  #service-4 {
-    background: url(avatar.jpg);
-    background-position: bottom center;
-  }
 
-
-.faq {
-    height: 80vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: end;
+    align-items: end;
+    align-content: end;
+
+    padding: 20px 20px;
+    text-align: justify;
+    gap: 20px;
 }
 
-.faq h1 {
-    font-size: 2em;
+.services-element p{
+    width: 50%;
 }
 
-.faq-element {
-    border: 1px solid black;
-    margin: 5px;
-    padding: 20px;
-    width: 500px;
+/* Define os backgrounds das divs */
+#service-1 {
+    background: url(avatar.jpg);
+    background-position: left center;
 }
 
-.faq-element summary {
-    list-style: none;
-    font-size: 2em;
+#service-2 {
+    background: url(img2.jpg);
+    background-position: right center;
+}
 
+#service-3 {
+    background: url(avatar.jpg);
+    background-position: top center;
+}
+
+#service-4 {
+    background: url(avatar.jpg);
+    background-position: bottom center;
+}
+
+
+.faq-container {
+    height: 40vh;
+    width: 600px;
+    margin: auto;
+}
+
+.faq-container h1{
+    text-align: center;
+}
+
+.faq-item {
+    border-bottom: 1px solid black;
+    color: black;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: transparent;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    width: 100%;
+    text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.faq-element summary h2 {
-    font-size: 1em;
+.faq-answer {
+    padding: 15px;
+    display: none;
+    font-size: 16px;
 }
 
-.faq-element p {
-    margin-top: 20px;
-    font-size: 1.5em;
+.arrow {
+    font-size: 20px;
 }
 
 .contact {
@@ -240,6 +284,13 @@ video {
     justify-content: center;
     gap: 80px;
 
+    opacity: 0;
+    transform: translateY(100px);
+
+}
+.contact-organic .contact-element{
+    opacity: 0;
+    transform: translateX(-50px);
 }
 
 .contact-organic {
@@ -256,6 +307,8 @@ video {
 .socials {
     display: flex;
     gap: 20px;
+
+    
 }
 
 .social-icon {
@@ -263,4 +316,7 @@ video {
     height: 70px;
     border: 1px solid white;
     border-radius: 50%;
+
+    opacity: 0;
+    transform: translateY(50px);
 }
