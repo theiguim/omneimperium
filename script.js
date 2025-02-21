@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.to(".slide-main", {
+        y: -100, // Move para cima 100px
+        opacity: 0, // Opcional: faz desaparecer enquanto sobe
+        scrollTrigger: {
+            trigger: "body", // A animação ocorre com o scroll do body
+            start: "top+=200 top", // Começa após 100px de rolagem
+            end: "top+=500 top", // Termina após 300px de rolagem
+            scrub: true, // Suaviza a animação com o scroll
+        }
+    });
+
     gsap.to(".image", {
         width: "300px",  // Faz a imagem crescer até 300px
         opacity: 1,      // Faz ela aparecer
@@ -45,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 1.5,
         scrollTrigger: {
             trigger: ".teme-elements",
-            start: "top 80%",
-            end: "top 50%",
+            start: "top 50%",
+            end: "top 10%",
             scrub: true
         }
     });
@@ -57,8 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 1.5,
         scrollTrigger: {
             trigger: ".teme-elements",
-            start: "top 80%",
-            end: "top 50%",
+            start: "top 50%",
+            end: "top 10%",
             scrub: true
         }
     });
@@ -79,17 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    gsap.to(".faq-container", {
-        x: "165px", // Move o título para a esquerda
-        opacity: 0.7,
-        duration: 1.5,
-        scrollTrigger: {
-            trigger: ".faq-container",
-            start: "top 80%",
-            end: "top 30%",
-            scrub: true
-        }
-    });
+    // gsap.to(".faq-container", {
+    //     x: "165px", // Move o título para a esquerda
+    //     opacity: 0.7,
+    //     duration: 1.5,
+    //     scrollTrigger: {
+    //         trigger: ".faq-container",
+    //         start: "top 80%",
+    //         end: "top 30%",
+    //         scrub: true
+    //     }
+    // });
 
     gsap.fromTo(".services-link",
         { opacity: 0, x: -100 },
