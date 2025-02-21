@@ -308,6 +308,7 @@ video {
 
 .faq-container h1 {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .faq-item {
@@ -341,7 +342,8 @@ video {
 }
 
 .contact {
-    height: 70vh;
+    height: auto;
+    padding: 100px 0;
 
     display: flex;
     flex-direction: column;
@@ -422,19 +424,110 @@ footer {
         letter-spacing: 6px;
     }
 
-    /* editar about */
+    .about-container {
+        /* alterado vw para reduzir texto p */
+        max-width: 60vw;
+    }
+
+    .about-container>p {
+        margin-left: 0;
+        width: 80%;
+    }
+
 }
 
 @media(max-width: 650px) {
-    /* editar service */
-    /* editar faq */
+
+    .about-container>p {
+        margin-left: -20vw;
+        width: 90%;
+    }
+
+    .white-section {
+        height: auto;
+    }
+
+
+    .services {
+        height: 60vh;
+        max-width: 80vw;
+    }
+
+    .services-link {
+        right: 0;
+        left: -10vw;
+        top: 10vh;
+    }
+
+    .services-elements {
+        width: 400px;
+        height: 450px;
+    }
+
+    .services-element {
+        justify-content: end;
+        align-items: end;
+        align-content: end;
+    }
+
+    .services-element p {
+        width: 60%;
+    }
+
+    .faq-container {
+        height: auto;
+        width: 400px;
+    }
 }
 
 @media(max-width: 530px) {
-    /* editar main */
-    /* editar contact */
+
+    .over-background>h1 {
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
+
+    .about-container>p {
+        margin-left: -30vw;
+        width: 95%;
+    }
+
+    .services-elements {
+        width: 350px;
+        height: 400px;
+    }
+
+    .contact {
+        height: 70vh;
+        gap: 40px;
+    }
+
+    .contact-organic {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-element {
+        align-items: center;
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+
 }
 
+@media(max-width: 450px){
+    /* service */
+    /* MOBILE */
+}
 
-
-/* mobile */
+/* 
+FINALIZAR MOBILE
+FOTOS
+COPY
+SEO
+FINISH
+ */
