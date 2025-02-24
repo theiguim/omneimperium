@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    ScrollTrigger.defaults({
+        markers: false, // Ative `true` para ver os marcadores de debug
+        mobile: true,
+    });
+
+    ScrollTrigger.refresh();
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(".slide-main", {
-        y: -100, // Move para cima 100px
+        y: -100, // Move para cima 100px 
         opacity: 0, // Opcional: faz desaparecer enquanto sobe
         scrollTrigger: {
             trigger: "body", // A animação ocorre com o scroll do body
