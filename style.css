@@ -79,7 +79,7 @@ video {
 }
 
 .logo {
-    width: 350px;
+    width: 500px;
     /* margin-top: 10vh; */
 }
 
@@ -130,6 +130,7 @@ video {
 .about h1 {
     font-size: 2rem;
     transition: transform 0.5s ease-out;
+    text-shadow: 2px 2px 5px #c1aa1573;
 }
 
 
@@ -266,7 +267,7 @@ video {
     cursor: pointer;
 
     background-color: #c1ab15;
-    border: 1px solid rgba(0, 0, 0, 0.288);
+    border: 1px solid rgba(0, 0, 0, 0.13);
     padding: 15px;
     border-radius: 25px;
 
@@ -367,7 +368,7 @@ video {
 }
 
 .footer-logo {
-    width: 120px
+    width: 100px
 }
 
 .contact-organic .contact-element {
