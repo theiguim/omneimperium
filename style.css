@@ -327,6 +327,14 @@ video {
     font-size: 15px;
 }
 
+.faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    will-change: transform;
+    /* transition: max-height 0.4s ease-in-out; */
+}
+
+
 .faq-answer>p {
     margin: 10px 0;
     color: rgb(37, 36, 36);
@@ -393,6 +401,11 @@ video {
     cursor: pointer;
     opacity: 0;
     transform: translateY(50px);
+    transition: .3s;
+}
+
+.social-icon:hover{
+    transform: scale(1.05) !important;
 }
 
 footer {
@@ -549,10 +562,13 @@ footer {
         margin-left: -60vw;
         width: 80%;
     }
+    
 
     .faq-container {
         height: auto;
-        width: 80vw;
+        max-height: 140vh;
+        overflow: hidden;
+        width: 85vw;
     }
 
 }

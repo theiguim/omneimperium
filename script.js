@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     ScrollTrigger.defaults({
-        markers: false, // Ative `true` para ver os marcadores de debug
+        markers: false, 
         mobile: true,
     });
 
@@ -10,30 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(".slide-main", {
-        y: -100, // Move para cima 100px 
-        opacity: 0, // Opcional: faz desaparecer enquanto sobe
+        y: -100, 
+        opacity: 0, 
         scrollTrigger: {
-            trigger: "body", // A animação ocorre com o scroll do body
-            start: "top+=200 top", // Começa após 100px de rolagem
-            end: "top+=500 top", // Termina após 300px de rolagem
-            scrub: true, // Suaviza a animação com o scroll
+            trigger: "body", 
+            start: "top+=200 top", 
+            end: "top+=500 top", 
+            scrub: true, 
         }
     });
 
     gsap.to(".image", {
-        width: "300px",  // Faz a imagem crescer até 300px
-        opacity: 1,      // Faz ela aparecer
+        width: "300px",  
+        opacity: 1,     
         duration: 1.5,
         scrollTrigger: {
-            trigger: ".about-container",  // Corrigido para a seção correta
-            start: "top 80%",  // Começa quando a seção estiver 80% visível
+            trigger: ".about-container",  
+            start: "top 80%",  
             end: "top 30%",
             scrub: true
         }
     });
 
     gsap.to(".title", {
-        x: "-150px", // Move o título para a esquerda
+        x: "-150px", 
         opacity: 1,
         duration: 1.5,
         scrollTrigger: {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     gsap.to(".description", {
-        x: "150px", // Move o texto para a direita
+        x: "150px", 
         opacity: 1,
         duration: 1.5,
         scrollTrigger: {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     gsap.from(".teme-element:first-child", {
-        x: "-200px", // Move para a esquerda
+        x: "-200px", 
         opacity: 0,
         duration: 1.5,
         scrollTrigger: {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     gsap.from(".teme-element:last-child", {
-        x: "200px", // Move para a direita
+        x: "200px", 
         opacity: 0,
         duration: 1.5,
         scrollTrigger: {
@@ -97,18 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // gsap.to(".faq-container", {
-    //     x: "165px", // Move o título para a esquerda
-    //     opacity: 0.7,
-    //     duration: 1.5,
-    //     scrollTrigger: {
-    //         trigger: ".faq-container",
-    //         start: "top 80%",
-    //         end: "top 30%",
-    //         scrub: true
-    //     }
-    // });
-
     gsap.fromTo(".services-link",
         { opacity: 0, x: -100 },
         {
@@ -118,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power3.out",
             scrollTrigger: {
                 trigger: ".services-link",
-                start: "top 80%", // Inicia quando 80% do elemento entrar na tela
+                start: "top 80%", 
                 toggleActions: "play none none reverse"
             }
         }
@@ -153,8 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     );
-
-    // Animação para os elementos de contato (deslizam da esquerda)
     gsap.fromTo(".contact-organic .contact-element", 
         { opacity: 0, x: -50 }, 
         {
@@ -162,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
             x: 0, 
             duration: 1,
             ease: "power3.out",
-            stagger: 0.3, // Efeito de "delay" entre os elementos
+            stagger: 0.3, 
             scrollTrigger: {
                 trigger: ".contact-organic",
                 start: "top 85%",
@@ -171,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-    // Animação para as redes sociais (deslizam de baixo para cima)
     gsap.fromTo(".social-icon", 
         { opacity: 0, y: 50 }, 
         {
@@ -190,39 +175,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const questions = document.querySelectorAll(".faq-question");
 
-    questions.forEach(question => {
-        question.addEventListener("click", () => {
-            const answer = question.nextElementSibling;
-            const arrow = question.querySelector(".arrow");
+questions.forEach(question => {
+    question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        const arrow = question.querySelector(".arrow");
 
-            questions.forEach(item => {
-                const otherAnswer = item.nextElementSibling;
-                const otherArrow = item.querySelector(".arrow");
+        questions.forEach(item => {
+            const otherAnswer = item.nextElementSibling;
+            const otherArrow = item.querySelector(".arrow");
 
-                if (otherAnswer !== answer && otherAnswer.style.display === "block") {
-                    gsap.to(otherAnswer, {
-                        height: 0, opacity: 0, duration: 0.4, onComplete: () => {
-                            otherAnswer.style.display = "none";
-                            otherArrow.textContent = "↓";
-                        }
-                    });
-                }
-            });
-
-            if (answer.style.display === "block") {
-                gsap.to(answer, {
-                    height: 0, opacity: 0, duration: 0.4, onComplete: () => {
-                        answer.style.display = "none";
-                        arrow.textContent = "↓";
+            if (otherAnswer !== answer && otherAnswer.style.maxHeight !== "0px") {
+                gsap.to(otherAnswer, {
+                    maxHeight: 0, opacity: 0, duration: 0.4, onComplete: () => {
+                        otherAnswer.style.display = "none";
+                        otherArrow.textContent = "↓";
                     }
                 });
-            } else {
-                answer.style.display = "block";
-                gsap.fromTo(answer, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.4 });
-                arrow.textContent = "↑";
             }
         });
+
+        if (answer.style.maxHeight && answer.style.maxHeight !== "0px") {
+            gsap.to(answer, {
+                maxHeight: 0, opacity: 0, duration: 0.4, onComplete: () => {
+                    answer.style.display = "none";
+                    arrow.textContent = "↓";
+                }
+            });
+        } else {
+            answer.style.display = "block";
+            gsap.fromTo(answer, { maxHeight: 0, opacity: 0 }, { maxHeight: "1000px", opacity: 1, duration: 0.4 });
+            arrow.textContent = "↑";
+        }
     });
+});
 
 
 });
