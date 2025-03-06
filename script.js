@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.to(".title", {
         x: "-150px", // Move o título para a esquerda
-        opacity: 0.7,
+        opacity: 1,
         duration: 1.5,
         scrollTrigger: {
             trigger: ".about-container",
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.to(".description", {
         x: "150px", // Move o texto para a direita
-        opacity: 0.7,
+        opacity: 1,
         duration: 1.5,
         scrollTrigger: {
             trigger: ".about-container",
