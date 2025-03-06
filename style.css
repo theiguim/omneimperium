@@ -184,139 +184,73 @@ video {
 }
 
 .services {
-    height: 60vh;
+    height: auto;
     max-width: 80vw;
     display: flex;
-    /* justify-content: space-between; */
     align-items: start;
     align-content: center;
     position: relative;
     gap: 20px;
 }
 
-.services-link {
-    opacity: 0;
-    transform: translateX(-100px);
-
+.services>h1{
     position: absolute;
-
-    left: 0;
-    top: 0;
-    z-index: 100;
-    background-color: #ebe9e5;
-
-
-    /* text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418); */
 }
 
-.service-link {
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: color 0.3s ease, font-weight 0.3s ease, font-size 0.5s;
-
-    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.212);
-}
-
-.service-link.active {
-    color: orange;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.432);
-    font-weight: bold;
-    font-size: 1.3em;
-}
-
-.services-link>h1 {
-
-    position: absolute;
-    top: -15vh;
-    font-size: 2.5em;
-
-}
-
-.services-link h2 {
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-
-.services-elements {
-    position: relative;
-    width: 600px;
-    /* Tamanho da área visível */
-    height: 400px;
-    overflow: hidden;
-    /* Garante que a transição ocorra dentro da área */
-    opacity: 0;
-    transform: translateX(100px);
-}
-
-.services-elements .services-element {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.8s ease, background-position 1s ease-in-out;
-
-    display: flex;
-    justify-content: end;
-}
-
-.services-elements .services-element.active {
-    opacity: 1;
-}
-
-.services-element {
-    height: 100%;
-    width: 100%;
-    color: white;
-
+.services-elements{
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    align-content: end;
-
-    padding: 20px 20px;
-    text-align: justify;
+    align-items: start;
+   
     gap: 20px;
+   
+    height: 550px;
+
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.103);
+    transition: 0.3s;
+
+    position: relative;
+}
+.services-element>h2{
+margin-bottom: 20px;
+}
+.services-elements>button{
+    margin: auto;
+    
+    bottom: 20px;
+    background-color: yellow;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 15px;
+    border-radius: 25px;
+
+    font-size: 18px;
+    font-weight: bold;
+   
 }
 
-.services-element p {
-    width: 50%;
+.services-elements:hover{
+ /* transform: scale(1.01) !important; */
 }
 
-
-#service-1 {
-    background:
-        url(avatar.jpg);
-    background-position: left center;
+.services-elements>h1{
+    text-align: center !important;
 }
 
-#service-2 {
-    background:
-        linear-gradient(to left, #ebe9e5, #ebe9e500 70%),
-        url(img2.jpg);
-    background-position: right center;
+.services-element{
+font-size: 14px;
 }
 
-#service-3 {
-    background:
-        linear-gradient(to left, #ebe9e5, #ebe9e500 70%),
-        url(avatar.jpg);
-    background-position: top center;
+.services-element h2{
+font-size: 15px;
+color: rgb(34, 34, 34);
 }
-
-#service-4 {
-    background:
-        linear-gradient(to left, #ebe9e5, #ebe9e500 70%),
-        url(avatar.jpg);
-    background-position: bottom center;
-}
-
 
 .faq-container {
-    height: 40vh;
+    height: auto;
     width: 600px;
     margin: auto;
 }
@@ -350,8 +284,20 @@ video {
 .faq-answer {
     padding: 15px;
     display: none;
-    font-size: 16px;
+    font-size: 15px;
 }
+
+.faq-answer>p {
+    margin: 10px 0;
+    color: rgb(37, 36, 36);
+}
+
+.faq-answer>p>span {
+   color: black;
+   font-weight: 600;
+}
+
+
 
 .arrow {
     font-size: 20px;
