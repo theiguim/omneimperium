@@ -26,6 +26,19 @@ body {
     font-family: sans-serif;
 }
 
+.wpp-fixed{
+    position: fixed;
+    z-index: 100;
+    right: 1vw;
+    bottom: 4vh;
+    width: 70px;
+    transition: .3s;
+}
+
+.wpp-fixed:hover{
+    transform: scale(1.05) !important;
+}
+
 section {
     height: 100vh;
     position: relative;
@@ -34,7 +47,7 @@ section {
 
 .main {
     position: relative;
-    height: 100vh;
+    height: 90vh;
 }
 
 .video-container {
@@ -413,7 +426,7 @@ footer {
     position: absolute;
     bottom: 0;
     padding: 10px;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 @media(max-width: 1350px) {
@@ -512,6 +525,10 @@ footer {
 
 @media(max-width: 530px) {
 
+    .logo {
+        width: 450px;
+    }
+
     .over-background>h1 {
         font-size: 50px;
         letter-spacing: 5px;
@@ -545,6 +562,10 @@ footer {
 }
 
 @media(max-width: 450px) {
+
+    .logo {
+        width: 350px;
+    }
     .over-background>h1 {
         font-size: 40px;
         letter-spacing: 4px;
