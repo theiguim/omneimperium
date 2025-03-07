@@ -301,6 +301,22 @@ video {
     padding: 0 50px;
 }
 
+.erp{
+    border: 2px solid #c1ab15;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+    
+}
+.erp h1{
+    color: #c1ab15;
+    font-size: 20px;
+}
+
+.erp>img{
+    width: 150px;
+}
+
 
 
 .faq-container {
